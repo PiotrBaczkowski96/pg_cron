@@ -47,8 +47,8 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ github.repository_owner }}/postgresql
           tags: |
-            type=raw,value=${{ env.PG_VERSION }}-standard-trixie-pgcron
-            type=raw,value=${{ env.PG_MAJOR }}-standard-trixie-pgcron
+            type=raw,value=${{ env.PG_VERSION }}-standard-bookworm-pgcron
+            type=raw,value=${{ env.PG_MAJOR }}-standard-bookworm-pgcron
             type=raw,value=${{ env.PG_MAJOR }}
             type=sha,prefix=${{ env.PG_MAJOR }}-
 
@@ -61,6 +61,7 @@ jobs:
           platforms: linux/amd64,linux/arm64
           build-args: |
             PG_VERSION=${{ env.PG_VERSION }}
+            PG_MAJOR=${{ env.PG_MAJOR }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
