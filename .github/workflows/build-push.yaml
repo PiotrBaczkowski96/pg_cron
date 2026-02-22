@@ -11,8 +11,8 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  PG_MAJOR: "18"
-  PG_VERSION: "18.2"
+  PG_MAJOR: "16"
+  PG_VERSION: "16.12"
 
 jobs:
   build-and-push:
