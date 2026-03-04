@@ -9,7 +9,7 @@ ARG PG_MAJOR
 USER root
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends postgresql-${PG_MAJOR}-cron &&  \
+    apt-get install -y --no-install-recommends postgresql-${PG_MAJOR}-cron  \
         barman-cli-cloud && \
 
     apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false && \
